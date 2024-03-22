@@ -4,6 +4,7 @@
 #include "FilterRed.hpp"
 #include "FilterGreen.hpp"
 #include "FilterBlue.hpp"
+#include "GradSobel.hpp"
 #include "CImg.h"
 #include <cstring> // Pour utiliser strcmp
 
@@ -49,6 +50,11 @@ int main(int argc, char* argv[])
     {
         FilterBlue blue;
         image = blue.filterblue(image);
+    }
+    else if(strcmp(filterName, "GradSobel") == 0)
+    {
+        GradSobel sobel;
+        image = sobel.gradsobel(image);
     }
     else 
     {
